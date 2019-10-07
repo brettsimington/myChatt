@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'popper_js'
 gem 'tether-rails'
 gem 'simple_form'
+gem 'redis'
+gem 'redis-namespace'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
