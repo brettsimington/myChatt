@@ -1,4 +1,4 @@
 <div class="well">
-  [%= message.create_at.strftime("%I:%M %p") %] <%= message.user.username %>: 
+  <%= message.created_at.strftime("%I:%M %p") %> <%= message.user.username %>: 
   <%= message.body %>
 </div>
