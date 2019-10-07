@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="jumbtron">
   <h1 style="text-align: center">myChat!</h1>
   <div class="well" id="chatbox" style="height:250px; border: solid 1px #222222; overflow-y: scroll">
@@ -5,7 +6,7 @@
       <%= render 'messages/message', message: message %>
     <% end %>
   </div>
-  <% if current_user %>
+  
   <%= form_with model: @message do |f| %>
   <div class="input-group mb-3">
     <%= f.text_field :body, placeholder: "Say something...", class: "form-control" %>
