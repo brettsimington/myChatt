@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mychat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- I found online, by rendering things like navbar, footer, alerts, i am not flooding my code with shit.. Brett -->
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/alerts' %>
+    <%= yield %>
+  </body>
+</html>
