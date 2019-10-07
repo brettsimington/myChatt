@@ -61,6 +61,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
 
+# stops getting stoopid whitelist error when making post.
 class Application < Rails::Application
   config.web_console.whiny_requests = false
 end

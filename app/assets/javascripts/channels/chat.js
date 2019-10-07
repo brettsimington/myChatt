@@ -1,9 +1,9 @@
 App.chat = App.cable.subscriptions.create("ChatChannel", {
   connected: function() {
-    console.log("Connected to myChat channel.");
+    console.log("Connected to myChat channle.");
   },
   disconnected: function() {
-    console.log("Disconnected from myChat channel.");
+    console.log("Discnnected from myChat channel.");
   },
   received: function(data) {
     var messages = $('#chatbox');
