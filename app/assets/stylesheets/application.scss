@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "/*";
+@import "bootstrap";
+@import "tether";
 
 .alert-alert {
   @extend .alert-danger;
@@ -23,6 +26,7 @@
   @extend .alert-success;
 }
 
-@import "/*";
-@import "bootstrap";
-@import "tether";
+.content {
+  max-width: 800px;
+  margin: auto;
+}
