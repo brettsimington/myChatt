@@ -1,7 +1,7 @@
 class UserlistController < ApplicationController
 
   def user
-    @users = User.all
+    @users = onlinename.all
     @message.user = current_user 
   end
 
