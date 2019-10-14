@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 
   def username
-      #@users = username
+      #@users = onlinename
       #return email.split('@')[0].capitalize
       return onlinename
   end
