@@ -1,5 +1,5 @@
 class UserlistController < ApplicationController
-  attr_accessible :is_online?
+  #attr_accessible :is_online?
 
   def user
     @users = onlinename.all
