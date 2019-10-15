@@ -7,8 +7,8 @@ class UserlistController < ApplicationController
     @message.user = current_user 
   end
 
-  def is_online?(is_online?)
-    is_online?.exists?(is_online?: 'true')
-  end
+  # def is_online?(is_online?)
+  #   is_online?.exists?(is_online?: 'true')
+  # end
 
 end
