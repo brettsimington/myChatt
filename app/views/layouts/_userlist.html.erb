@@ -5,14 +5,14 @@
     Users Online
   </div>
   <ul class="list-group list-group-flush">
-  <% if user_signed_in? %>
    <% @users.each do |user| %>
+   <% if user.is_online? %>
       <li class="list-group-item"> <%= user.onlinename %> </li>
       <% end %>
       <% end %>
   </ul>
 </div>
-
+      
 <br />
 
 <div class="card" style="width: 12rem;">
@@ -20,7 +20,7 @@
     Users Offline
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Dan</li>
+    <li class="list-group-item">test</li>
   </ul>
 </div>
 <% end %>

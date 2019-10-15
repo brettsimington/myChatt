@@ -1,5 +1,5 @@
 <div class="content">
-<% if current_user %>
+<% if user_signed_in? %>
 <!-- play here to modify the alerts. hide / fade etc.. -->
 <script>
     $(document).ready(function() {
@@ -9,6 +9,7 @@
 <!-- -->
 
 <!-- beggining of bootstrap jumbotron and the messabe box where teh chat appears -->
+
 <div class="jumbotron">
   <h1 style="text-align: center">myChat!</h1>
   <div class="well" id="chatbox" style="height:250px; border: solid 1px #222222; overflow-y: scroll">

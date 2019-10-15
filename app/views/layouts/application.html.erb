@@ -5,11 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <% if user_signed_in? %>
+      <%= tag :meta, name: "current-user", data: {id: current_user.id} %>
+    <% end %>
+
+  </head>
   <body>
     <!-- I found online, by rendering things like navbar, footer, alerts, i am not flooding my code with shit.. Brett -->
   <div class="empty">
