@@ -1,4 +1,5 @@
 <div class="userlist">
+  
   <% if user_signed_in? %>
 <div class="card" style="width: 12rem;">
   <div class="card-header">
@@ -7,7 +8,7 @@
   <ul class="list-group list-group-flush">
    <% @users.each do |user| %>
    <% if user.is_online? %>
-      <li class="list-group-item"> <%= user.onlinename %> </li>
+      <li class="list-group-item"><%= user.onlinename %></li>
       <% end %>
       <% end %>
   </ul>
@@ -20,7 +21,11 @@
     Users Offline
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"></li>
+   <% @users.each do |user| %>
+   <% if !user.is_online? %>
+    <li class="list-group-item"><%= user.onlinename %></li>
+    <% end %>
+    <% end %>
   </ul>
 </div>
 <% end %>
