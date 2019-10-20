@@ -10,7 +10,8 @@ class ChatChannel < ApplicationCable::Channel
  
   def unsubscribed
     #current_user.disappear
-    user = User.where(params[:user_id])
+    #user = User.where(params[:user_id])
+    user = current_user
     user.update(is_online?: '0')
   end
 
