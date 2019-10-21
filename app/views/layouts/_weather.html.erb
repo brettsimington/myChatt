@@ -1,9 +1,56 @@
 <div class="weather">
+  <script>
+$(document).ready(function(){
+  $("#submitCity").click(function(){
+    getWeather();
+  });
+
+});
+
+function getWeather(city){
+  var city = $("#city").val();
+  var key = '8707a3816ca4237392460dd8c74bd3ff';
+  var temp = $(".temp");
+  var htemp = $(".htemp");
+  var ltemp = $(".ltemp");
+  if(city != ''){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city + '&units=imperial' + '&appid=' + key) 
+     .then(function(resp) { return resp.json() }) // Convert data to json
+     .then(function(data) {
+     console.log(data);
+     temp.html(data.main.temp+" F");
+     htemp.html(data.main.temp_max+" F");
+     ltemp.html(data.main.temp_min+" F");
+     })
+     .catch(function() {
+    // catch any errors
+  });
+  }
+  window.onload = function() {
+    weatherBallon( Tampa );
+}
+};
+</script>
   <% if user_signed_in? %>
-  <div class="card" style="width: 12rem;">
+  <div class="card" style="width: 14rem;">
     <div class="card-header">
       Local Weather!
+    </div>
+    <div class="card-header">
+      Enter City
+      <div class="row form-group form-inline" id="cityDiv"></div>
+        <input type="text" name="city" id="city" class="form-control" placeholder="Enter City Name">
+        <button id="submitCity" class="btn btn-primary">Search</button>
+    </div>
+      <ul class="list-group list-group-flush">
+        
+        <li class="list-group-item">Cur Temp: <h7 class="temp"></h7></li>
+        <li class="list-group-item">High Temp: <h7 class="htemp"></h7></li>
+        <li class="list-group-item">Low Temp: <h7 class="ltemp"></h7></li>
+        
+      </ul>
     </div>
   </div>
   <% end %>
 </div>
+

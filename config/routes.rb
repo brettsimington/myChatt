@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :forecasts
   post 'messages', to: 'messages#create'
   devise_for :users, :controllers => {registrations: 'registrations'}
   root 'pages#home'
