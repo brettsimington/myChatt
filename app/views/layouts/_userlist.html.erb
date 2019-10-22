@@ -1,15 +1,23 @@
 <div class="userlist">
+<!-- script to refresh user list? -->
+<script>
+
+
+</script>
+<!-- script to refresh user list? -->
   <% if user_signed_in? %>
 <div class="card" style="width: 12rem;">
   <div class="card-header">
     Users Online
   </div>
   <ul class="list-group list-group-flush">
+    <!-- logic to show is user is online -->
    <% @users.each do |user| %>
    <% if user.is_online? %>
       <li class="list-group-item"><%= user.onlinename %></li>
       <% end %>
       <% end %>
+    <!-- logic to show is user is online -->
   </ul>
 </div>
       
@@ -20,11 +28,13 @@
     Users Offline
   </div>
   <ul class="list-group list-group-flush">
+    <!-- logic to show is user is offline -->
    <% @users.each do |user| %>
    <% if !user.is_online? %>
     <li class="list-group-item"><%= user.onlinename %></li>
     <% end %>
     <% end %>
+    <!-- logic to show is user is offline -->
   </ul>
 </div>
 <% end %>

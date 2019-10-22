@@ -5,7 +5,7 @@ $(document).ready(function(){
     messages.scrollTop(messages[0].scrollHeight);
   }
 
-  window.setTimeout(init, 50);
+  window.setTimeout(init, 30);
 });
 
 
