@@ -21,6 +21,7 @@ function getWeather(city){
      temp.html(data.main.temp+" F");
      htemp.html(data.main.temp_max+" F");
      ltemp.html(data.main.temp_min+" F");
+     //desc.html(data.weather(1)_description); //<-- why no worky? I think because weather -> 0 -> description... how read inside of 0?
      })
      .catch(function() {
     // catch any errors
@@ -35,6 +36,7 @@ function getWeather(city){
   <div class="card" style="width: 14rem;">
     <div class="card-header">
       Local Weather!
+      <%= image_tag("weather.png")%>
     </div>
     <div class="card-header">
       Enter City
@@ -47,7 +49,7 @@ function getWeather(city){
         <li class="list-group-item">Cur Temp: <h7 class="temp"></h7></li>
         <li class="list-group-item">High Temp: <h7 class="htemp"></h7></li>
         <li class="list-group-item">Low Temp: <h7 class="ltemp"></h7></li>
-        
+        <li class="list-group-item">Conditions: <h7 class="desc"></h7></li>
       </ul>
     </div>
   </div>

@@ -14,7 +14,7 @@
     <!-- logic to show is user is online -->
    <% @users.each do |user| %>
    <% if user.is_online? %>
-      <li class="list-group-item"><%= user.onlinename %></li>
+      <li class="list-group-item"><%= user.onlinename %> <%= image_tag("on.png")%></li>
       <% end %>
       <% end %>
     <!-- logic to show is user is online -->
@@ -31,7 +31,7 @@
     <!-- logic to show is user is offline -->
    <% @users.each do |user| %>
    <% if !user.is_online? %>
-    <li class="list-group-item"><%= user.onlinename %></li>
+    <li class="list-group-item"><%= user.onlinename %> <%= image_tag("off.png")%></li>
     <% end %>
     <% end %>
     <!-- logic to show is user is offline -->
