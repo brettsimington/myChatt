@@ -6,13 +6,15 @@ $(document).ready(function(){
   });
 
 });
-
 function getWeather(city){
   var city = $("#city").val();
   var key = '8707a3816ca4237392460dd8c74bd3ff'
   var temp = $(".temp");
   var htemp = $(".htemp");
   var ltemp = $(".ltemp");
+  var desc = $(".desc");
+  var wind = $(".wind");
+  var icon = $(".icon");
   if(city != ''){
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city + '&units=imperial' + '&appid=' + key) 
      .then(function(resp) { return resp.json() }) // Convert data to json
@@ -21,7 +23,9 @@ function getWeather(city){
      temp.html(data.main.temp+" F");
      htemp.html(data.main.temp_max+" F");
      ltemp.html(data.main.temp_min+" F");
-     //desc.html(data.weather(1)_description); //<-- why no worky? I think because weather -> 0 -> description... how read inside of 0?
+     desc.html(data.weather[0].description); //<-- why no worky? I think because weather -> 0 -> description... how read inside of 0?
+     wind.html(data.wind.speed);
+     icon.attr("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon+".png");
      })
      .catch(function() {
     // catch any errors
@@ -45,11 +49,11 @@ function getWeather(city){
         <button id="submitCity" class="btn btn-primary">Search</button>
     </div>
       <ul class="list-group list-group-flush">
-        
         <li class="list-group-item">Cur Temp: <h7 class="temp"></h7></li>
         <li class="list-group-item">High Temp: <h7 class="htemp"></h7></li>
         <li class="list-group-item">Low Temp: <h7 class="ltemp"></h7></li>
-        <li class="list-group-item">Conditions: <h7 class="desc"></h7></li>
+        <li class="list-group-item">Conditions: <h7 class="desc"></h7><img class="icon"></li>
+        <li class="list-group-item">Wind Speed: <h7 class="wind"></h7></li>
       </ul>
     </div>
   </div>
