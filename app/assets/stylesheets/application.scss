@@ -76,8 +76,12 @@
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding: 10px;
+  max-width: 30% !important;
+  margin: auto;
+  margin-top: 1%;
 }
 
 .booyah-box h2, .booyah-box h1 {
   margin: 10px;
+  text-align: center;
 }
