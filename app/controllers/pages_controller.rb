@@ -6,4 +6,8 @@ class PagesController < ApplicationController
     @users = User.all
   end
 
+  def index
+
+  end
+
 end
